@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>バイト偏差値 — あなたのバイトは何クラス？</title>
+  <meta name="description" content="アルバイトの時給・勤務時間・待遇を入力すると、全国の投稿データと比べた偏差値と、RPGの職業に例えたクラスが分かります。ログイン不要。">
+  <meta name="theme-color" content="#5b3fd6">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/form.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/">バイト<span>偏差値</span></a>
+      <nav class="site-nav" aria-label="メニュー">
+        <a href="/" aria-current="page">診断</a>
+        <a href="/classes.html">クラス図鑑</a>
+        <a href="/stats.html">全国データ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <div class="intro-sprites" id="intro-sprites" aria-hidden="true"></div>
+      <h1>あなたのバイトは<br>何クラス？</h1>
+      <p class="muted">時給・勤務時間・待遇を入れると、全国のみんなの投稿と比べた<strong>「バイト偏差値」</strong>と、RPGの職業に例えた<strong>「クラス」</strong>が分かります。ログイン不要・30秒で診断。</p>
+    </section>
+
+    <form id="entry-form" class="card" novalidate>
+      <div class="form-field">
+        <label for="pref">都道府県</label>
+        <select id="pref" name="pref" required>
+          <option value="">選んでください</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="industry">業種</label>
+        <select id="industry" name="industry" required>
+          <option value="">選んでください</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="wage">時給</label>
+        <div class="input-suffix">
+          <input id="wage" name="wage" type="number" inputmode="numeric" min="800" max="10000" step="1" placeholder="例：1200" required>
+          <span>円</span>
+        </div>
+        <p class="hint">800〜10,000円の整数</p>
+      </div>
+
+      <div class="form-field">
+        <label for="hours">週の勤務時間</label>
+        <div class="input-suffix">
+          <input id="hours" name="hours" type="number" inputmode="numeric" min="1" max="60" step="1" placeholder="例：15" required>
+          <span>時間</span>
+        </div>
+        <p class="hint">1〜60時間（だいたいでOK）</p>
+      </div>
+
+      <fieldset>
+        <legend>待遇（あてはまるものをすべて）</legend>
+        <div class="chips" id="perks"></div>
+      </fieldset>
+
+      <label class="check">
+        <input type="checkbox" id="consent" name="consent" checked>
+        <span>この回答を集計に使ってよい<br><span class="small muted">オフにすると計算だけして保存しません</span></span>
+      </label>
+
+      <div class="turnstile-box" id="turnstile"></div>
+
+      <button type="submit" class="btn btn-primary btn-block" id="submit-btn">偏差値を診断する</button>
+      <p class="error-box" id="form-error" role="alert" aria-live="assertive"></p>
+      <p class="small muted center">数値は投稿者の自己申告に基づく参考値です。<a href="/terms.html">利用規約・プライバシー</a></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>バイト偏差値 — 数値はユーザーの自己申告に基づく参考値で、公的統計ではありません。</p>
+      <p><a href="/terms.html">利用規約・プライバシーポリシー</a></p>
+    </div>
+  </footer>
+</body>
+</html>

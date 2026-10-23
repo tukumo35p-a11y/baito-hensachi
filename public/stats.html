@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>全国データ — バイト偏差値</title>
+  <meta name="theme-color" content="#5b3fd6">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/stats-page.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/">バイト<span>偏差値</span></a>
+      <nav class="site-nav" aria-label="メニュー">
+        <a href="/">診断</a>
+        <a href="/classes.html">クラス図鑑</a>
+        <a href="/stats.html" aria-current="page">全国データ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>全国データ</h1>
+    <p class="muted small">みんなの投稿（自己申告）を集計した値です。公的統計ではありません。極端な外れ値は集計から除いています。</p>
+    <div id="stats-error" class="notice hidden" role="alert"></div>
+
+    <section class="card" aria-labelledby="overview-title">
+      <h2 id="overview-title">概要</h2>
+      <dl class="big-stats" id="overview"><div><dt>読み込み中…</dt><dd>—</dd></div></dl>
+    </section>
+
+    <section class="card" aria-labelledby="ind-title">
+      <h2 id="ind-title">業種別 平均時給ランキング</h2>
+      <ol class="rank-list" id="industry-rank"></ol>
+    </section>
+
+    <section class="card" aria-labelledby="pref-title">
+      <h2 id="pref-title">都道府県別 平均時給</h2>
+      <div class="tabs" role="group" aria-label="並び順">
+        <button type="button" data-sort="code" aria-pressed="true">北から</button>
+        <button type="button" data-sort="wage" aria-pressed="false">時給が高い順</button>
+      </div>
+      <ol class="rank-list" id="pref-rank"></ol>
+    </section>
+    <p class="small muted">データが10件未満の業種・都道府県は「データ不足」と表示しています。</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>バイト偏差値 — 数値はユーザーの自己申告に基づく参考値で、公的統計ではありません。</p>
+      <p><a href="/terms.html">利用規約・プライバシーポリシー</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>診断結果 — バイト偏差値</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#5b3fd6">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/result.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/">バイト<span>偏差値</span></a>
+      <nav class="site-nav" aria-label="メニュー">
+        <a href="/">診断</a>
+        <a href="/classes.html" id="nav-dex">クラス図鑑</a>
+        <a href="/stats.html">全国データ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="no-data" class="card center hidden">
+      <p>診断結果がありません。</p>
+      <a class="btn btn-primary" href="/">診断する</a>
+    </div>
+
+    <div id="result" class="hidden">
+      <div id="provisional" class="notice hidden"></div>
+
+      <section class="card hero-card" id="hero" aria-labelledby="class-name">
+        <div id="hero-class">
+          <div class="sprite-wrap" id="hero-sprite"></div>
+          <p class="class-caption">あなたのクラス</p>
+          <h1 class="class-name" id="class-name"></h1>
+          <p class="class-comment" id="class-comment"></p>
+        </div>
+        <p class="score-line" aria-live="polite">
+          総合偏差値<span id="provisional-pill"></span>
+          <span class="score-big" id="score"></span>
+        </p>
+        <p id="next-class" class="next-class"></p>
+        <div id="hero-empty" class="no-class hidden"></div>
+        <div class="levelup-badge" aria-hidden="true">LEVEL UP!</div>
+      </section>
+
+      <section class="card" aria-labelledby="weights-title">
+        <h2 id="weights-title">何を重視する？</h2>
+        <p class="small muted">項目ごとの重み（0〜10）を動かすと、総合偏差値とクラスがその場で変わります。設定はこのブラウザに保存されます。</p>
+        <div class="presets" id="presets"></div>
+        <div id="sliders"></div>
+      </section>
+
+      <section class="card" aria-labelledby="items-title">
+        <h2 id="items-title">項目別の偏差値（全国）</h2>
+        <div class="dev-bars" id="item-bars"></div>
+        <dl class="summary-list" id="summary" style="margin-top:16px"></dl>
+      </section>
+
+      <section class="card" aria-labelledby="scopes-title">
+        <h2 id="scopes-title">くらべる範囲を変えると</h2>
+        <table class="scope-table">
+          <thead><tr><th scope="col">範囲</th><th scope="col">総合</th><th scope="col">時給</th><th scope="col">稼ぎ</th><th scope="col">待遇</th></tr></thead>
+          <tbody id="scope-rows"></tbody>
+        </table>
+        <p class="small muted" style="margin-top:8px">各範囲のデータが10件未満のときは「データ不足」と表示します。</p>
+      </section>
+
+      <section class="card histogram" aria-labelledby="hist-title">
+        <h2 id="hist-title">時給の分布（全国）</h2>
+        <div id="histogram"></div>
+      </section>
+
+      <section class="card">
+        <div class="btn-row">
+          <a class="btn btn-x" id="share-x" href="#" target="_blank" rel="noopener">𝕏 でシェア</a>
+          <a class="btn" id="dex-link" href="/classes.html">クラス図鑑を見る</a>
+        </div>
+        <p class="small muted" id="saved-note" style="margin-top:12px"></p>
+        <p class="center" style="margin:8px 0 0"><a href="/">入力し直す</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>バイト偏差値 — 数値はユーザーの自己申告に基づく参考値で、公的統計ではありません。</p>
+      <p><a href="/terms.html">利用規約・プライバシーポリシー</a></p>
+    </div>
+  </footer>
+</body>
+</html>

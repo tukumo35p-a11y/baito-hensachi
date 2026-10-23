@@ -1,0 +1,18 @@
+# 秘密情報
+.dev.vars
+.env
+.env.*
+!.dev.vars.example
+
+# 依存・ビルド・ローカルDB
+node_modules/
+.wrangler/
+dist/
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+__pycache__/

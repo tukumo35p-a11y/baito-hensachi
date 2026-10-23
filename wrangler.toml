@@ -1,0 +1,14 @@
+name = "baito-hensachi"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "./public"
+
+# D1 データベース。ローカル開発ではこのままでよい。
+# 本番で使うときは `npx wrangler d1 create baito-hensachi` で発行された database_id に置き換える
+[[d1_databases]]
+binding = "DB"
+database_name = "baito-hensachi"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+# 秘密情報（TURNSTILE_SECRET_KEY, IP_HASH_SALT）はここに書かない。
+# ローカルは .dev.vars、本番は Cloudflare のダッシュボードで設定する

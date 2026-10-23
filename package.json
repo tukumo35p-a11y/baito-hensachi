@@ -1,0 +1,20 @@
+{
+  "name": "baito-hensachi",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "バイトの時給・勤務時間・待遇から偏差値とRPGのクラスが分かるWebサイト",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "db:migrate": "wrangler d1 migrations apply baito-hensachi --local",
+    "db:seed": "wrangler d1 execute baito-hensachi --local --file=seed/dev-seed.sql",
+    "db:reset": "wrangler d1 execute baito-hensachi --local --command=\"DELETE FROM posts\"",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
